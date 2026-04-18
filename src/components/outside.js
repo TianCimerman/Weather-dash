@@ -75,7 +75,7 @@ export default function WeatherWidget() {
         style={{ backgroundColor: "hsl(218, 46%, 8%)" }}
         className="w-[38.33rem] rounded-3xl m-[2.5rem] p-[1.5rem] h-[26rem] flex items-center justify-center"
       >
-        <p className="text-white text-xl animate-pulse">Initializing Sensors...</p>
+        <p className="text-white text-xl animate-pulse">Loading data...</p>
       </div>
     );
   }
