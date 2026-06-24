@@ -91,17 +91,17 @@ export default function WeatherWidget() {
 
 
   return (
-    <div style={{ backgroundColor: 'hsl(218, 46%, 8%)' }} className="relative w-[38rem] rounded-3xl m-[2.5rem] p-[1.5rem] hss:p-[1rem] h-[22rem] hss:h-[19rem] hss:w-[29rem] ml-[1.5rem] ml-[0.225rem] sl:w-[90%] sl:items-center sl:h-[80%]">
-      <p className="text-[3.125rem] text-center font-bold sl:text-[2rem] sl:mr-[6rem] hss:text-white">Inside</p>
-      <div className="absolute top-12 right-5 sl:top-0 sl:right-3">
+    <div style={{ backgroundColor: 'hsl(218, 46%, 8%)' }} className="relative w-[25rem] rounded-3xl m-[2.5rem] p-[1.5rem] pr-[4rem] hss:p-[1rem] h-[22rem] hss:h-[19rem] hss:w-[20rem] ml-[1.5rem] ml-[0.225rem] sl:w-[90%] sl:items-center sl:h-[80%]">
+      <p className="text-[3.125rem] text-center font-bold sl:text-[2rem] sl:mr-[3rem] hss:text-white">Inside</p>
+      <div className="absolute top-[4rem] right-5 sl:top-0 sl:right-3">
         <FloorSwitch floor={floor} setFloor={setFloor} />
       </div>
-      <div className="flex flex-row pt-[2.5rem] sl:pt-[0.5rem]">
+      <div className="flex flex-row pt-[2.5rem] sl:pt-[0.5rem] sl:ml-[1rem]">
         <div className="flex flex-col gap-[2.5rem] items-center ml-[1.5rem] pt-[1rem] p-[1.25rem] rounded-3xl w-[5rem] sl:text-[0.8rem] sl:ml-0 sl:gap-[1rem]">
           <FontAwesomeIcon icon={faTemperatureLow} color="orange" className="text-5xl sl:text-3xl" />
           <FontAwesomeIcon icon={faTint}color="orange" className="pr-[0.1875rem] text-5xl sl:text-3xl"/>
         </div>
-        <div className={`flex flex-col gap-[0.125rem] items-center ml-[7.5rem] pt-[0.5rem] hss:ml-[2.5rem] sl:ml-0 ${floor === "first" ? "block" : "hidden"}`}>
+        <div className={`flex flex-col gap-[0.125rem] items-center ml-[2.5rem] pt-[0.5rem] hss:ml-[2.5rem] sl:ml-3 ${floor === "first" ? "block" : "hidden"}`}>
           <div className="flex flex-row gap-[2rem] items-center">
             <p className="text-[2.8rem] sl:text-[1.5rem] hss:text-white">{data.sensors.find((d) => d._field === "temperature_in")?._value ?? "--"}°C</p>
           </div>
@@ -109,7 +109,7 @@ export default function WeatherWidget() {
             <p className="text-[2.8rem] sl:text-[1.5rem] hss:text-white ">{data.sensors.find((d) => d._field === "humidity_in")?._value ?? "--"}%</p>
           </div>
         </div>
-                <div className={`flex flex-col gap-[0.125rem] items-center ml-[7.5rem] pt-[0.5rem] hss:ml-[2.5rem] sl:ml-0 ${floor === "second" ? "block" : "hidden"}`}>
+            <div className={`flex flex-col gap-[0.125rem] items-center ml-[2.5rem] pt-[0.5rem] hss:ml-[2.5rem] sl:ml-3  ${floor === "second" ? "block" : "hidden"}`}>
           <div className="flex flex-row gap-[2rem] items-center">
             <p className="text-[2.8rem] sl:text-[1.5rem] hss:text-white">{data.sensors.find((d) => d._field === "temperature_in_2")?._value ?? "--"}°C</p>
           </div>

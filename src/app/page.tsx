@@ -7,6 +7,8 @@ import Inside_Temp from "@/components/inside";
 import Time from "@/components/time";
 import TemperatureGauge from "@/components/power";
 import Navbar from '@/components/navbar';
+import Fill from '@/components_feeder/fill_small';
+import Last_feed from '@/components_feeder/last_feed';
 
 function App() {
     useEffect(() => {
@@ -29,18 +31,21 @@ function App() {
         <div className="h-full overflow-y-auto pt-5 pl-16 hss:pt-0 hss:pl-0 sl:p-0">
           <div className="flex flex-col md:flex-row items-start gap-5 hss:ml-5 sl:ml-0">
             <WeatherWidget />
-            <div className="md:mt-[2.4rem] md:ml-[-4rem] sl:hidden">
+            <div className="md:mt-[2.4rem] md:ml-[-4rem] sl:hidden ">
               <Time />
             </div>
           </div>
 
           {/* Inside Temp + Gauge */}
           <div className="flex flex-col md:flex-row gap-5 mt-4 md:mt-[-1rem] hss:ml-5">
-            <div className="mt-1 md:mt-[-2rem] sl:mt-[-5rem]">
+            <div className="mt-1 md:mt-[-2rem] sl:mt-[-5rem] flex ">
               <Inside_Temp />
+              <div className="md:ml-[0rem] sl:ml-[-1rem]  sl:hidden ">
+              <Fill/>
+              <Last_feed />
+              </div>
             </div>
-
-            <div className="mt-[-10.5rem] hss:mt-[-5.3rem] sl:mt-[-2.5rem] sl:ml-[1rem] sl:pb-[1rem]">
+            <div className="mt-[-10.5rem] hss:mt-[-5.3rem] sl:mt-[-2.5rem] sl:ml-[1rem] sl:pb-[1rem] ">
               <TemperatureGauge />
             </div>
           </div>
